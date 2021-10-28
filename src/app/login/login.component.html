@@ -1,0 +1,44 @@
+
+<div class="signup card" *ngIf="login">
+  <div class="signup-classic">
+    <h2 class="text-center">Login Page</h2>
+    <form class="form" [formGroup]="loginForm" (ngSubmit)="onClickLogin()">
+      <div class="mb-2">
+        <input type="email" placeholder="email" formControlName="email"/>
+        <p class="lblError"*ngIf="loginForm.get('email').hasError('required') && !loginForm.get('email').pristine ">email is required!...</p>
+        <p class="lblError"*ngIf="loginForm.get('email').hasError('email') && !loginForm.get('email').pristine ">Enter valid email!...</p>
+      </div>
+      <div class="mb-2">
+        <input type="password" placeholder="password" formControlName="password" />
+        <p class="lblError"*ngIf="loginForm.get('password').hasError('required') && !loginForm.get('password').pristine ">password is required!...</p>
+      </div>
+      <div class="text-center mt-4">
+      <button type="submit" class="btn btn-info">sign up</button>
+      <button class="btn btn-info ml-2" type="button"(click)="onClickData()"> Register</button>
+     </div>
+    </form>
+  </div>
+</div>
+<div class="signup card" *ngIf="register">
+  <div class="signup-classic">
+    <h2 class="text-center">Register Page</h2>
+    <form class="form" [formGroup]="registerForm" (ngSubmit)="onClickRegister()">
+      <div class="mb-2">
+        <input type="text" class="form-control" formControlName="name" placeholder="name" />
+      </div>
+      <div class="mb-2">
+        <input type="email" class="form-control" formControlName="email" placeholder="email" />
+        <p class="lblError"*ngIf="registerForm.get('email').hasError('required') && !registerForm.get('email').pristine ">email is required!...</p>
+        <p class="lblError"*ngIf="registerForm.get('email').hasError('email') && !registerForm.get('email').pristine ">Enter valid email!...</p>
+      </div>
+      <div class="mb-2">
+        <input type="number" class="form-control" formControlName="mobileNo" placeholder="mobile number" />
+      </div>
+      <div class="mb-2">
+        <input type="password" class="form-control" formControlName="password" placeholder="password" />
+        <p class="lblError"*ngIf="registerForm.get('password').hasError('required') && !registerForm.get('password').pristine ">password is required!...</p>
+      </div>
+      <button type="submit" class="button" >sign up</button>
+    </form>
+  </div>
+</div>

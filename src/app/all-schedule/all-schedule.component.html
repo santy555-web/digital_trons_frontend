@@ -1,0 +1,42 @@
+<div class="container mt-5" *ngIf="showItem">
+  <div class="row">
+      <div class="col-lg-4 mt-3" *ngFor="let item of data[0]">
+          <div class="card">
+            <div class="card-header">{{item.first_name}}&nbsp;{{item.last_name}}</div>
+            <div class="card-body">
+              <div class="card-title">Date : &nbsp;{{item.date_now}} </div>
+              <div class="card-title">Time : &nbsp;{{item.slot_time}}</div>
+              <div class="card-title">Mobile Number: &nbsp; {{item.mobileNo}}</div>
+            </div>
+            <div class="card-footer text-right" (click)="onEditClick(item)">Edit</div>
+          </div>
+      </div>
+  </div>
+  </div>
+
+<div class="signup card" *ngIf="edit">
+  <div class="signup-classic">
+    <h2 class="text-center">Login Page</h2>
+    <form class="form" [formGroup]="EditForm" (ngSubmit)="onEditForm()">
+      <div class="mb-2">
+        <input type="first_name" placeholder="first Name" formControlName="first_name"/>
+        <p class="lblError"*ngIf="EditForm.get('first_name').hasError('required') && !EditForm.get('first_name').pristine ">email is required!...</p>
+      </div>
+      <div class="mb-2">
+        <input type="last_name" placeholder="last Name" formControlName="last_name"/>
+        <p class="lblError"*ngIf="EditForm.get('last_name').hasError('required') && !EditForm.get('last_name').pristine ">email is required!...</p>
+      </div>
+      <div class="mb-2">
+        <input type="slot_time" placeholder="slot Time" formControlName="slot_time"/>
+        <p class="lblError"*ngIf="EditForm.get('slot_time').hasError('required') && !EditForm.get('slot_time').pristine ">email is required!...</p>
+      </div>
+      <div class="mb-2">
+        <input type="mobileNo" placeholder="mobile Number" formControlName="mobileNo"/>
+        <p class="lblError"*ngIf="EditForm.get('mobileNo').hasError('required') && !EditForm.get('mobileNo').pristine ">email is required!...</p>
+      </div>
+      <div class="text-center mt-4">
+      <button type="submit" class="btn btn-info">Edit</button>
+     </div>
+    </form>
+  </div>
+</div>

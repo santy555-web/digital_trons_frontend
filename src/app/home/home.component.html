@@ -1,0 +1,161 @@
+
+
+<!--
+<div class="card-container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="text-center my-4 row">
+        <div class="ml-3 mr-3">
+          <form [formGroup]="timeSlotForm" (ngSubmit)="onSubmitForm()">
+          <div class="d-flex tab-content justify-content-center">
+            <div class="align-items-left my-5 mx-5">
+              <img src="https://images.pexels.com/photos/430205/pexels-photo-430205.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" class="logo-img" alt="image">
+              <h5>Select Schedule</h5>
+              <p>Meet with Santosh</p>
+          </div>
+            <div class="form-wrapper" *ngIf="dateFlag">
+              <h5 class="text-center">Day Name</h5>
+              <div class="form-group">
+                 <div class="form-check" *ngIf="flag1">
+                     <input id="radio-1" class="radio-custom" formControlName="slot_time" type="radio" value="9AM-10AM">
+                     <label for="radio-1" class="radio-custom-label">9AM - 10AM</label>
+                 </div>
+                 <div class="form-check" *ngIf="flag2">
+                     <input id="radio-2" class="radio-custom" formControlName="slot_time" type="radio" value="10AM-11AM" >
+                     <label for="radio-2" class="radio-custom-label">10AM - 11AM</label>
+                 </div>
+                 <div class="form-check" *ngIf="flag3">
+                     <input id="radio-3" class="radio-custom" formControlName="slot_time" type="radio" value="11AM-12PM">
+                     <label for="radio-3" class="radio-custom-label">11AM - 12PM</label>
+                 </div>
+                <div class="form-check" *ngIf="flag4">
+                   <input id="radio-4" class="radio-custom" formControlName="slot_time" type="radio" value="12PM-1PM">
+                   <label for="radio-4" class="radio-custom-label">12PM - 1PM</label>
+               </div>
+
+               <div class="form-check" *ngIf="flag5">
+                 <input id="radio-5" class="radio-custom" formControlName="slot_time" type="radio" value="1PM-2PM">
+                 <label for="radio-5" class="radio-custom-label">1PM - 2PM</label>
+             </div>
+
+             <div class="form-check" *ngIf="flag6">
+               <input id="radio-6" class="radio-custom" formControlName="slot_time" type="radio" value="2PM-3PM">
+               <label for="radio-6" class="radio-custom-label">2PM - 3PM</label>
+             </div>
+
+             <div class="form-check" *ngIf="flag7">
+               <input id="radio-7" class="radio-custom" formControlName="slot_time" type="radio" value="3PM-4PM">
+               <label for="radio-7" class="radio-custom-label">3PM - 4PM</label>
+             </div>
+             <div class="form-check" *ngIf="flag8">
+               <input id="radio-8" class="radio-custom" formControlName="slot_time" type="radio" value="4PM-5PM">
+               <label for="radio-8" class="radio-custom-label">4PM - 5PM</label>
+             </div>
+             </div>
+             <div class="d-flex justify-content-center pb-2">
+              <button type="submit" class="btn btn-info" (click)="onClickNext()">Next</button>
+            </div>
+           </div>
+
+        <div *ngIf="formFlag">
+            <div class="d-flex align-items-start flex-column my-5 mx-2">
+              <div class="pb-2">
+                <input type="text" class="form-control" placeholder="First name">
+              </div>
+              <div class="pb-2">
+                <input type="text" class="form-control" placeholder="Last name">
+              </div>
+              <div class="pb-2">
+                <input type="text" class="form-control" placeholder="Mobile Number">
+              </div>
+            </div>
+            <div class="d-flex justify-content-center pb-2">
+              <button type="submit" class="btn btn-info ml-3">Save</button>
+              <button type="button" class="btn btn-info">Cancle</button>
+            </div>
+        </div>
+      </div>
+      </form>
+        </div>
+      </div>
+   </div>
+   </div>
+</div> -->
+
+<div class="signup">
+  <div class="signup-connect">
+    <h1>Select Schedule</h1>
+    <div class="align-items-center d-flex flex-column">
+      <img src="https://images.pexels.com/photos/430205/pexels-photo-430205.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" class="logo-img" alt="image">
+      <p class="mt-2">Meet with Santosh</p>
+   </div>
+  </div>
+  <div class="signup-classic card" >
+
+    <form class="form" [formGroup]="timeSlotForm" (ngSubmit)="onSubmitForm()">
+      <div class="form-wrapper" *ngIf="dateFlag" >
+          <h2 class="text-center">{{ tday | date:'EEEE, MMMM d, y'}}</h2>
+
+           <div class="form-check" *ngIf="flag1">
+               <input id="radio-1" class="radio-custom" formControlName="slot_time" type="radio" value="9AM-10AM" (ngModelChange)="salectedInput($event)">
+               <label for="radio-1" class="radio-custom-label">9AM - 10AM</label>
+           </div>
+           <div class="form-check" *ngIf="flag2">
+               <input id="radio-2" class="radio-custom" formControlName="slot_time" type="radio" value="10AM-11AM" (ngModelChange)="salectedInput($event)" >
+               <label for="radio-2" class="radio-custom-label">10AM - 11AM</label>
+           </div>
+           <div class="form-check" *ngIf="flag3">
+               <input id="radio-3" class="radio-custom" formControlName="slot_time" type="radio" value="11AM-12PM" (ngModelChange)="salectedInput($event)">
+               <label for="radio-3" class="radio-custom-label">11AM - 12PM</label>
+           </div>
+          <div class="form-check" *ngIf="flag4">
+             <input id="radio-4" class="radio-custom" formControlName="slot_time" type="radio" value="12PM-1PM" (ngModelChange)="salectedInput($event)">
+             <label for="radio-4" class="radio-custom-label">12PM - 1PM</label>
+         </div>
+
+         <div class="form-check" *ngIf="flag5">
+           <input id="radio-5" class="radio-custom" formControlName="slot_time" type="radio" value="1PM-2PM" (ngModelChange)="salectedInput($event)">
+           <label for="radio-5" class="radio-custom-label">1PM - 2PM</label>
+       </div>
+
+       <div class="form-check" *ngIf="flag6">
+         <input id="radio-6" class="radio-custom" formControlName="slot_time" type="radio" value="2PM-3PM" (ngModelChange)="salectedInput($event)">
+         <label for="radio-6" class="radio-custom-label">2PM - 3PM</label>
+       </div>
+
+       <div class="form-check" *ngIf="flag7">
+         <input id="radio-7" class="radio-custom" formControlName="slot_time" type="radio" value="3PM-4PM" (ngModelChange)="salectedInput($event)">
+         <label for="radio-7" class="radio-custom-label">3PM - 4PM</label>
+       </div>
+       <div class="form-check" *ngIf="flag8">
+         <input id="radio-8" class="radio-custom" formControlName="slot_time" type="radio" value="4PM-5PM" (ngModelChange)="salectedInput($event)">
+         <label for="radio-8" class="radio-custom-label">4PM - 5PM</label>
+       </div>
+
+       <div class="d-flex justify-content-center pb-2">
+        <button type="submit" class="btn btn-info" [disabled]="!invalid" (click)="onClickNext()">Next</button>
+      </div>
+     </div>
+     <div *ngIf="formFlag" class="d-flex align-items-start flex-column my-5 mx-2">
+      <div >
+        <div class="pb-2">
+          <input type="text" class="form-control" formControlName="first_name" placeholder="First name">
+        </div>
+        <div class="pb-2">
+          <input type="text" class="form-control" formControlName="last_name" placeholder="Last name">
+        </div>
+        <div class="pb-2">
+          <input type="text" class="form-control" formControlName="mobileNo" placeholder="Mobile Number">
+        </div>
+        <div class="pb-2" [hidden]="true" >
+          <input type="text" class="form-control" formControlName="date_now">
+        </div>
+      </div>
+      <div class="d-flex justify-content-center pb-2">
+        <button type="submit" class="btn btn-info ml-3">Save</button>
+        <button type="button" (click)="onClickNext()" class="btn btn-info ml-2">Cancle</button>
+      </div>
+  </div>
+    </form>
+  </div>
+</div>

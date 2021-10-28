@@ -1,0 +1,87 @@
+
+.button {
+  display: block;
+  background: hsl(86, 76%, 71%);
+  color: hsl(0, 0, 100);
+  text-decoration: none;
+  margin: 20px 0;
+  padding: 15px 15px;
+  border-radius: 5px;
+  position: relative;
+}
+.lblError{
+color: red;
+}
+.button::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all .2s ease-in-out;
+    box-shadow: inset 0 3px 0 hsla(0, 0, 0, 0), 0 3px 3px hsla(0, 0, 0, .2);
+    border-radius: 5px;
+  }
+  .button:hover::after {
+    background: hsla(0, 0, 0, 0.1);
+    box-shadow: inset 0 3px 0 hsla(0, 0, 0, 0.2);
+  }
+
+  .fa {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 50px;
+    height: 100%;
+    text-align: center;
+    background: hsla(0, 0, 0, 0.1);
+    line-height: 3.2;
+    border-radius: 5px 0 0 5px;
+  }
+
+    input {
+      width: 100%;
+      height: 48px;
+      color: hsl(0, 0, 20);
+      padding: 15px 40px 15px 15px;
+      border-radius: 5px;
+      font-size: 14px;
+      outline: none!important;
+      border: 1px solid hsla(0, 0, 0, 0.3);
+      box-shadow: inset 0 1px 4px hsla(0, 0, 0, 0.2);
+      vertical-align: top;
+    }
+  .button {
+    width: 100%;
+    outline: none!important;
+    background: linear-gradient(-5deg, hsl(86, 61%, 44%), hsl(86, 65%, 54%));
+    border: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: 0 3px 0px hsla(86, 21%, 44%, 0.2);
+    text-shadow: 0 2px 3px hsla(0, 0, 0, 0.2);
+  }
+  .card-footer{
+    cursor: pointer;
+  }
+.signup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  width: 400px;
+  background: hsl(0, 0, 100);
+  border-radius: 10px;
+  box-shadow: 0 3px 25px hsla(0, 0, 0, 0.2);
+  overflow: hidden;
+  display: flex;
+}
+.signup-classic
+{
+  width: 100%;
+  padding: 30px 50px;
+}
